@@ -5,13 +5,15 @@ using UnityEngine;
 
 public class Gun : MonoBehaviour
 {
-    GameObject barrelPoint;
+    [SerializeField] int damange;
 
+    GameObject barrelPoint;
 
     Animator gunAnimator;
     AudioSource gunAudio;
     [SerializeField] AudioClip gunShotSound;
     [SerializeField] ParticleSystem muzzleFlash;
+
 
     // Start is called before the first frame update
     void Start()
@@ -26,15 +28,11 @@ public class Gun : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(barrelPoint.transform.position, barrelPoint.transform.forward, out hit))
         {
-            try
+            IDamageable damageable = hit.collider.GetComponentInParent<IDamageable>();
+            if (damageable != null)
             {
-                hit.transform.gameObject.GetComponent<HitHandler>().CallHitMethod();
-
+                damageable.Damage(hit, damange);
             }
-            catch (Exception e)
-            {
-                Debug.Log(e);
-            } 
         }
 
 
