@@ -31,6 +31,7 @@ public class Cop : MonoBehaviour, IDamageable
     public void Damage(RaycastHit hit, int damage)
     {
         GameObject impactParticle = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
+        impactParticle.transform.parent = hit.transform;
         Destroy(impactParticle, 1f);
         SetRagdoll(true);
         hit.rigidbody.AddForceAtPosition(impactForce * -hit.normal, hit.point, ForceMode.Impulse);

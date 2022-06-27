@@ -497,7 +497,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.09231651
+  m_Radius: 0.12
   m_Center: {x: 0, y: 0.09231651, z: 0}
 --- !u!144 &9182188603814685342
 CharacterJoint:
@@ -821,9 +821,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.06921747
-  m_Height: 0.2768699
+  m_Height: 0.2704166
   m_Direction: 0
-  m_Center: {x: 0.13843495, y: 0, z: 0}
+  m_Center: {x: 0.1416616, y: 3.647906e-24, z: 2.9907768e-15}
 --- !u!144 &9182188604474309575
 CharacterJoint:
   m_ObjectHideFlags: 0
@@ -1615,8 +1615,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.36926603, y: 0.227136, z: 0.25733605}
-  m_Center: {x: 0.000000059604645, y: 0.113568015, z: -0.034395054}
+  m_Size: {x: 0.36926603, y: 0.3046143, z: 0.25733605}
+  m_Center: {x: 0.000000059604645, y: 0.15230715, z: -0.034395054}
 --- !u!144 &9182188604044382467
 CharacterJoint:
   m_ObjectHideFlags: 0
@@ -2263,10 +2263,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.101773046
+  m_Radius: 0.06251252
   m_Height: 0.50886524
   m_Direction: 0
-  m_Center: {x: 0.25443262, y: 0, z: 0}
+  m_Center: {x: 0.25443262, y: -0.0047905147, z: -1.1816067e-14}
 --- !u!144 &9182188603662035109
 CharacterJoint:
   m_ObjectHideFlags: 0
@@ -2533,9 +2533,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.06921749
-  m_Height: 0.27686995
+  m_Height: 0.28096792
   m_Direction: 0
-  m_Center: {x: -0.13843498, y: 0, z: 0}
+  m_Center: {x: -0.13638599, y: -3.5120545e-24, z: -3.7830185e-17}
 --- !u!144 &9182188603667461026
 CharacterJoint:
   m_ObjectHideFlags: 0
@@ -3009,7 +3009,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8335254934105218926}
-  m_LocalRotation: {x: -0, y: -1, z: -0, w: 0.00000058114523}
+  m_LocalRotation: {x: 0, y: -1, z: 0, w: 0}
   m_LocalPosition: {x: -1.84, y: 0, z: 9.21}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -3028,7 +3028,7 @@ Animator:
   m_GameObject: {fileID: 8335254934105218926}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: ba78382be180df944b0e76eeacbd5d95, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d5bd0663b99dd9441b6014abcd42b833, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -3067,7 +3067,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a37b3720b63ff54bbdf55d053b38ee2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  impactEffect: {fileID: 1541833320161986678, guid: 7e3f91a9a5ea55e44be748ef5732d923, type: 3}
+  player: {fileID: 0}
+  impactEffect: {fileID: 4050667806850628767, guid: be5e04050d2c98e43be5a90204c87041, type: 3}
   impactForce: 200
   health: 5
 --- !u!1 &8457562220921638426
@@ -3190,10 +3191,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.10125549
+  m_Radius: 0.061822116
   m_Height: 0.50627744
   m_Direction: 0
-  m_Center: {x: -0.25313872, y: 0, z: 0}
+  m_Center: {x: -0.25313872, y: -0.008363873, z: -3.5183095e-15}
 --- !u!144 &9182188603705653552
 CharacterJoint:
   m_ObjectHideFlags: 0
