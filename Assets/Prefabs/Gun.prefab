@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 913058509283131866}
   - component: {fileID: 1291547294639804775}
   - component: {fileID: 1727710835352429898}
-  - component: {fileID: 2135381405134467742}
+  - component: {fileID: -1239216082349927544}
   - component: {fileID: -4686324907158710845}
   m_Layer: 0
   m_Name: Gun
@@ -171,7 +171,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &2135381405134467742
+--- !u!114 &-1239216082349927544
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -180,7 +180,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1220458554975165149}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
+  m_Script: {fileID: 11500000, guid: b6f5addcdc7cb634cb495772330e08c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 0}
@@ -189,7 +189,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 2
+    m_Bits: 1
   m_SelectMode: 0
   m_CustomReticle: {fileID: 0}
   m_FirstHoverEntered:
