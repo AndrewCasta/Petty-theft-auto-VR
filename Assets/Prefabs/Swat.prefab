@@ -3068,7 +3068,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a37b3720b63ff54bbdf55d053b38ee2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 5
+  health: 1
   turnSpeed: 50
   playerTransform: {fileID: 0}
   gun: {fileID: 2793306656344454374}

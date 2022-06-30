@@ -60,9 +60,17 @@ public class Cop : MonoBehaviour, IDamageable
 
     public void Damage(RaycastHit hit, int damage)
     {
+        health--;
+        if (health < 1) Die(hit);
         GameObject impactParticle = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
         impactParticle.transform.parent = hit.transform;
         Destroy(impactParticle, 1f);
+    }
+
+    void Die (RaycastHit hit)
+    {
+        gun.gameObject.transform.SetParent(null);
+        isAlive = false;
         SetRagdoll(true);
         hit.rigidbody.AddForceAtPosition(impactForce * -hit.normal, hit.point, ForceMode.Impulse);
     }
