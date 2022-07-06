@@ -1,2 +1,0 @@
-# Petty theft auto VR
- 
