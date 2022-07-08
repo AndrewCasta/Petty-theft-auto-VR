@@ -3,7 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Gun : MonoBehaviour
+
+/// <summary>
+/// Basic Gun controller
+/// </summary>
+public class Gun : MonoBehaviour, IGun
 {
     [SerializeField] int damange;
 
@@ -40,7 +44,6 @@ public class Gun : MonoBehaviour
     public void NPCShoot(Vector3 targetDirection)
     {
         RaycastHit hit;
-        Debug.DrawRay(barrelPoint.transform.position, targetDirection, Color.green);
         if (Physics.Raycast(barrelPoint.transform.position, targetDirection, out hit))
         {
             IDamageable damageable = hit.collider.GetComponentInParent<IDamageable>();

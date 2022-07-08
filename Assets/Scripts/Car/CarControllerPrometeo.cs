@@ -16,6 +16,7 @@ using UnityEngine.UI;
 
 public class CarControllerPrometeo : MonoBehaviour
 {
+    [SerializeField] bool vrControl;
 
     //CAR SETUP
 
@@ -265,50 +266,50 @@ public class CarControllerPrometeo : MonoBehaviour
         A (turn left), D (turn right) or Space bar (handbrake).
         */
 
-        if (Input.GetKey(KeyCode.W))
+        if (!vrControl)
         {
-            CancelInvoke("DecelerateCar");
-            deceleratingCar = false;
-            GoForward();
-        }
-        if (Input.GetKey(KeyCode.S))
-        {
-            CancelInvoke("DecelerateCar");
-            deceleratingCar = false;
-            GoReverse();
+            if (Input.GetKey(KeyCode.W))
+            {
+                InputForward();
+            }
+            if (Input.GetKey(KeyCode.S))
+            {
+                InputReverse();
+            }
+
+            if (Input.GetKey(KeyCode.A))
+            {
+                TurnLeft();
+            }
+            if (Input.GetKey(KeyCode.D))
+            {
+                TurnRight();
+            }
+            if (Input.GetKey(KeyCode.Space))
+            {
+                CancelInvoke("DecelerateCar");
+                deceleratingCar = false;
+                Handbrake();
+            }
+            if (Input.GetKeyUp(KeyCode.Space))
+            {
+                RecoverTraction();
+            }
+            if ((!Input.GetKey(KeyCode.S) && !Input.GetKey(KeyCode.W)))
+            {
+                ThrottleOff();
+            }
+            if ((!Input.GetKey(KeyCode.S) && !Input.GetKey(KeyCode.W)) && !Input.GetKey(KeyCode.Space) && !deceleratingCar)
+            {
+                InvokeRepeating("DecelerateCar", 0f, 0.1f);
+                deceleratingCar = true;
+            }
+            if (!Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D) && steeringAxis != 0f)
+            {
+                ResetSteeringAngle();
+            }
         }
 
-        if (Input.GetKey(KeyCode.A))
-        {
-            TurnLeft();
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            TurnRight();
-        }
-        if (Input.GetKey(KeyCode.Space))
-        {
-            CancelInvoke("DecelerateCar");
-            deceleratingCar = false;
-            Handbrake();
-        }
-        if (Input.GetKeyUp(KeyCode.Space))
-        {
-            RecoverTraction();
-        }
-        if ((!Input.GetKey(KeyCode.S) && !Input.GetKey(KeyCode.W)))
-        {
-            ThrottleOff();
-        }
-        if ((!Input.GetKey(KeyCode.S) && !Input.GetKey(KeyCode.W)) && !Input.GetKey(KeyCode.Space) && !deceleratingCar)
-        {
-            InvokeRepeating("DecelerateCar", 0f, 0.1f);
-            deceleratingCar = true;
-        }
-        if (!Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D) && steeringAxis != 0f)
-        {
-            ResetSteeringAngle();
-        }
 
 
 
@@ -317,6 +318,22 @@ public class CarControllerPrometeo : MonoBehaviour
         AnimateWheelMeshes();
 
     }
+
+    public void InputForward()
+    {
+        CancelInvoke("DecelerateCar");
+        deceleratingCar = false;
+        GoForward();
+    }
+
+    public void InputReverse()
+    {
+        CancelInvoke("DecelerateCar");
+        deceleratingCar = false;
+        GoReverse();
+    }
+
+
 
     // This method converts the car speed data from float to string, and then set the text of the UI carSpeedText with this value.
     public void CarSpeedUI()
