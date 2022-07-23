@@ -7,16 +7,14 @@ using UnityEngine.XR.Interaction.Toolkit;
 /// <summary>
 /// Basic Gun interactable
 /// </summary>
-/// 
 
 [RequireComponent(typeof(IGun))]
-
 public class XRGun : XRGrabVelocityTrackedInteractable
 {
     protected override void OnActivated(ActivateEventArgs args)
     {
         base.OnActivated(args);
-        var gun = GetComponent<IGun>();
+        var gun = GetComponent<IGun>() as GunController;
         gun.Shoot();
     }
 }
