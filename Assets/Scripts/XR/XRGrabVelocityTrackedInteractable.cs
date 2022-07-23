@@ -4,8 +4,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 /// <summary>
 /// Uses the basic GrabInteractable
-/// Changes between instantaneous (smoother tracking) & velocity tracked (physics collisions) when trigger collider
-/// hits an object.
+/// Changes between instantaneous (smoother tracking) & velocity tracked (physics collisions) when trigger collider hits an object.
 /// Nests nest the interacable on the interactor during a grab, to reduce jitter during velocity tracked movement.
 /// </summary>
 /// 
