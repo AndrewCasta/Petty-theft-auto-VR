@@ -3176,13 +3176,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
-  turnSpeed: 50
+  turnSpeed: 200
   playerTransform: {fileID: 0}
   gun: {fileID: 2793306656344454374}
   shootTime: 2
+  impactForce: 200
   impactEffect: {fileID: 4050667806850628767, guid: be5e04050d2c98e43be5a90204c87041,
     type: 3}
-  impactForce: 200
+  BloodAttach: {fileID: 3136605153214515430, guid: 18ae207df492b2849bc8532355e45390,
+    type: 3}
+  BloodFX:
+  - {fileID: 2656253210798625995, guid: 2c2b309bdde9d5542ab2826e3dcc310c, type: 3}
+  - {fileID: 5865290276592450837, guid: dcae3ac22fd41234db730c83fb9b3d83, type: 3}
+  - {fileID: 764304066602274965, guid: e673b154366af4c469ea5e24fa3271fe, type: 3}
+  - {fileID: 7935733108997359171, guid: f33da12f002229d45abb1d40c621f5ee, type: 3}
+  - {fileID: 4288107571095694937, guid: f166ee77d6810a046b6392dd0589b772, type: 3}
+  - {fileID: 1165703760847671896, guid: 5b45204b41907ea4e99daa45b4f9ee49, type: 3}
+  - {fileID: 4152240900433254336, guid: b82221a0a15ae2e40aea18345400c550, type: 3}
+  - {fileID: 6463355840203370170, guid: 92b1d66261275c44580cf46586100f6e, type: 3}
+  - {fileID: 5170585893340993107, guid: f01db1b523b6e2545bc2ff0627f75504, type: 3}
+  - {fileID: 2629016494315086251, guid: 966abf115bdd08c4db396d63fa9e0537, type: 3}
+  - {fileID: 3034872428933141512, guid: 891e943ae6401864bac361f33e845da4, type: 3}
+  - {fileID: 2360933683143488451, guid: 37758835262ea8345b00114a77c3e7e8, type: 3}
+  - {fileID: 5016170632959171363, guid: 6178fedf937c8274cbccbf7fa4d0edc5, type: 3}
+  - {fileID: 8859926575668995837, guid: 8fee967b8783e5147999d236d3e54740, type: 3}
+  - {fileID: 5936082179827903908, guid: 9381cb95f57a4b943a244725150bb7ab, type: 3}
+  - {fileID: 5494213943435191861, guid: de9cfccec1480d2458066a1e856274ad, type: 3}
+  - {fileID: 5371219466416337994, guid: c2b511cc848b6cf4bb7326d4fcc32e00, type: 3}
+  DirLight: {fileID: 0}
+  direction: {x: 0, y: 0, z: 0}
 --- !u!1 &8457562220921638426
 GameObject:
   m_ObjectHideFlags: 0
@@ -3458,37 +3480,37 @@ PrefabInstance:
     - target: {fileID: 7765293807610884691, guid: 16358874db82a4e45a24a1e75d00848d,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.49308422
+      value: 0.544752
       objectReference: {fileID: 0}
     - target: {fileID: 7765293807610884691, guid: 16358874db82a4e45a24a1e75d00848d,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.5065648
+      value: 0.55533504
       objectReference: {fileID: 0}
     - target: {fileID: 7765293807610884691, guid: 16358874db82a4e45a24a1e75d00848d,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.48672777
+      value: 0.4302327
       objectReference: {fileID: 0}
     - target: {fileID: 7765293807610884691, guid: 16358874db82a4e45a24a1e75d00848d,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.5131824
+      value: 0.45798266
       objectReference: {fileID: 0}
     - target: {fileID: 7765293807610884691, guid: 16358874db82a4e45a24a1e75d00848d,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: 12.179
       objectReference: {fileID: 0}
     - target: {fileID: 7765293807610884691, guid: 16358874db82a4e45a24a1e75d00848d,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 89.256
+      value: 89.238
       objectReference: {fileID: 0}
     - target: {fileID: 7765293807610884691, guid: 16358874db82a4e45a24a1e75d00848d,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 92.296
+      value: 92.128
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 16358874db82a4e45a24a1e75d00848d, type: 3}

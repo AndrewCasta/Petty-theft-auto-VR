@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1727710835352429898}
   - component: {fileID: -4686324907158710845}
   - component: {fileID: 2249515566757291760}
-  - component: {fileID: 8880254410857181145}
+  - component: {fileID: 2011336458745823708}
   m_Layer: 7
   m_Name: Gun
   m_TagString: Untagged
@@ -186,7 +186,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b74562a7401ac9f43b28eb087843869b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damange: 1
   gunShotSound: {fileID: 8300000, guid: dce42920d720e7b40a6b00a4f0f60af4, type: 3}
   muzzleFlash: {fileID: 2431024867201667727}
 --- !u!114 &2249515566757291760
@@ -305,8 +304,8 @@ MonoBehaviour:
   m_RetainTransformParent: 1
   m_AttachPointCompatibilityMode: 0
   setBackToParent: 0
---- !u!136 &8880254410857181145
-CapsuleCollider:
+--- !u!65 &2011336458745823708
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -315,10 +314,9 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.11
-  m_Height: 0.35
-  m_Direction: 2
-  m_Center: {x: 0, y: 0.02, z: 0.06}
+  serializedVersion: 2
+  m_Size: {x: 0.06662774, y: 0.17098379, z: 0.23336983}
+  m_Center: {x: -0.0011395514, y: 0.0070228577, z: 0.046483517}
 --- !u!1 &1237673626920085962
 GameObject:
   m_ObjectHideFlags: 0

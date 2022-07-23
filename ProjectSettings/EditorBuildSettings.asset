@@ -5,9 +5,15 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/GunPlay.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/CopStressTest.unity
+    guid: 4745f6c89759c234498562fa3d24c99e
+  - enabled: 0
+    path: Assets/Scenes/Car.unity
+    guid: 9e0ab061d24b24c47a56d37446a53295
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 214f974da46cc7a4487bf0f50b86f941,
       type: 2}
