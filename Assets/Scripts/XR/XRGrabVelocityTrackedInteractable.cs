@@ -12,15 +12,6 @@ using UnityEngine.XR.Interaction.Toolkit;
 [RequireComponent(typeof(Collider))]
 public class XRGrabVelocityTrackedInteractable : XRGrabInteractable
 {
-    [SerializeField] bool setBackToParent;
-    Transform originalParent;
-
-    protected override void Awake()
-    {
-        base.Awake();
-        originalParent = transform.parent;
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.GetComponent<XRBaseControllerInteractor>() == null)
@@ -41,22 +32,17 @@ public class XRGrabVelocityTrackedInteractable : XRGrabInteractable
 
     }
 
-    protected override void OnSelectEntered(SelectEnterEventArgs interactor)
+    protected override void OnSelectEntered(SelectEnterEventArgs args)
     {
-        base.OnSelectEntered(interactor);
+        base.OnSelectEntered(args);
         transform.SetParent(interactorsSelecting[0].transform);
     }
 
-    protected override void OnSelectExited(SelectExitEventArgs interactor)
+    protected override void OnSelectExited(SelectExitEventArgs args)
     {
-        if (setBackToParent) 
-        {
-            transform.SetParent(originalParent);
-        } else
-        {
-            transform.SetParent(null);
-        }
-        base.OnSelectExited(interactor);
+
+        transform.SetParent(null);
+        base.OnSelectExited(args);
     }
 
     private void SetSmoothing(bool state)

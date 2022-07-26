@@ -5,9 +5,9 @@ using UnityEngine;
 
 public class CarInput : MonoBehaviour
 {
-    [SerializeField] XRSteeringWheel wheel;
-    [SerializeField] XRThrottle throttle;
-    [SerializeField] CarControllerPrometeo carController;
+    //[SerializeField] XRSteeringWheel wheel;
+    //[SerializeField] XRThrottle throttle;
+    //[SerializeField] CarControllerPrometeo carController;
 
     // Update is called once per frame
     void Update()
