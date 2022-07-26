@@ -18,8 +18,18 @@ public class NPC : MonoBehaviour, IDamageable, IKillable
     [SerializeField] GameObject[] BloodFX;
     public Light DirLight;
 
+    public virtual void Awake()
+    {
+        ragdollRB = GetComponentsInChildren<Rigidbody>();
+        animator = GetComponent<Animator>();
+        characterController = GetComponent<CharacterController>();
+        SetRagdoll(false);
+        IsAlive = true;
+        DirLight = GameObject.Find("Directional Light").GetComponent<Light>();
+        //playerTransform = GameObject.Find("Main Camera").transform;
+    }
 
-    public void Damage(RaycastHit hit, float damage)
+    public void Damage(float damage, RaycastHit hit = new RaycastHit())
     {
         Health--;
         if (Health < 1) Die(hit);
@@ -43,7 +53,6 @@ public class NPC : MonoBehaviour, IDamageable, IKillable
         characterController.enabled = !state;
     }
 
-    int effectIdx;
     public Vector3 direction;
     private void BloodEffects(RaycastHit hit)
     {

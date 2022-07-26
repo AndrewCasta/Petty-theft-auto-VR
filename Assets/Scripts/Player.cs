@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour, IDamageable
 {
-    public void Damage (RaycastHit hit, float damage)
+    public void Damage(float damage, RaycastHit hit = new RaycastHit())
     {
         Debug.Log("Player hit");
     }

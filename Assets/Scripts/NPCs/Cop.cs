@@ -13,17 +13,10 @@ public class Cop : NPC
     [SerializeField] float shootTime;
     float shootTimer = 0;
 
-
-
-    void Awake()
+    public override void Awake()
     {
-        ragdollRB = GetComponentsInChildren<Rigidbody>();
+        base.Awake();
         playerTransform = GameObject.Find("Main Camera").transform;
-        animator = GetComponent<Animator>();
-        characterController = GetComponent<CharacterController>();
-        SetRagdoll(false);
-        IsAlive = true;
-        DirLight = GameObject.Find("Directional Light").GetComponent<Light>();
     }
 
     void Update()
