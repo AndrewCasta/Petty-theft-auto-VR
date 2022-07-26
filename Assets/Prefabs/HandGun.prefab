@@ -9,14 +9,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7765293807610884691}
-  - component: {fileID: 913058509283131866}
-  - component: {fileID: 1291547294639804775}
   - component: {fileID: 1727710835352429898}
-  - component: {fileID: -4686324907158710845}
-  - component: {fileID: 2249515566757291760}
+  - component: {fileID: 1291547294639804775}
+  - component: {fileID: 913058509283131866}
   - component: {fileID: 2011336458745823708}
+  - component: {fileID: -4686324907158710845}
+  - component: {fileID: 8319349043968510765}
   m_Layer: 7
-  m_Name: Gun
+  m_Name: HandGun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42,42 +42,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &913058509283131866
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1220458554975165149}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 3
---- !u!95 &1291547294639804775
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1220458554975165149}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 65413c26861e10f4aa3d35da42eb22b4, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!82 &1727710835352429898
 AudioSource:
   m_ObjectHideFlags: 0
@@ -174,6 +138,55 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &1291547294639804775
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1220458554975165149}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 65413c26861e10f4aa3d35da42eb22b4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!54 &913058509283131866
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1220458554975165149}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
+--- !u!65 &2011336458745823708
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1220458554975165149}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.06662774, y: 0.17098379, z: 0.23336983}
+  m_Center: {x: -0.0011395514, y: 0.0070228577, z: 0.046483517}
 --- !u!114 &-4686324907158710845
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -186,9 +199,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b74562a7401ac9f43b28eb087843869b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 0
+  fireMode: 0
+  rateOfFire: 0
   gunShotSound: {fileID: 8300000, guid: dce42920d720e7b40a6b00a4f0f60af4, type: 3}
   muzzleFlash: {fileID: 2431024867201667727}
---- !u!114 &2249515566757291760
+--- !u!114 &8319349043968510765
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -197,16 +213,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 1220458554975165149}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1cae5d072b460084d9287c965e38c47f, type: 3}
+  m_Script: {fileID: 11500000, guid: 0e772d2759c34c347b5e29b17ac067e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 0}
-  m_Colliders: []
+  m_Colliders:
+  - {fileID: 4192660672458388000}
+  - {fileID: 3639810149362758110}
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 3
+    m_Bits: 1
   m_SelectMode: 0
   m_CustomReticle: {fileID: 0}
   m_FirstHoverEntered:
@@ -303,20 +321,8 @@ MonoBehaviour:
   m_ForceGravityOnDetach: 0
   m_RetainTransformParent: 1
   m_AttachPointCompatibilityMode: 0
-  setBackToParent: 0
---- !u!65 &2011336458745823708
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1220458554975165149}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.06662774, y: 0.17098379, z: 0.23336983}
-  m_Center: {x: -0.0011395514, y: 0.0070228577, z: 0.046483517}
+  rotatingInteractor: 0
+  isTwoHanded: 0
 --- !u!1 &1237673626920085962
 GameObject:
   m_ObjectHideFlags: 0

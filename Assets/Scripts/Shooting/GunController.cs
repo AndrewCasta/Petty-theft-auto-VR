@@ -8,9 +8,17 @@ using UnityEngine;
 /// Basic Gun controller
 /// </summary>
 
+[RequireComponent(typeof(AudioSource))]
 public class GunController : MonoBehaviour, IGun
 {
-    public float Damage { get; set; }
+    public enum FireMode { Single, Auto }
+
+    public float Damage { get => damage; set => damage = value; }
+    public float damage;
+    public FireMode fireMode;
+    [Tooltip("Bullets per second")]
+    public float rateOfFire;
+
     public int Ammo { get; set; }
     int ammoRemaining;
 
@@ -41,6 +49,7 @@ public class GunController : MonoBehaviour, IGun
         ShootAtTarget(targetDirection);
         // if ammoRemaining < 1
         // DryFire()
+        ShootEffect();
     }
 
     /// <summary>
@@ -50,6 +59,7 @@ public class GunController : MonoBehaviour, IGun
     public void Shoot(Vector3 targetDirection)
     {
         ShootAtTarget(targetDirection);
+        ShootEffect();
     }
 
     public void Reload()
@@ -65,15 +75,14 @@ public class GunController : MonoBehaviour, IGun
             IDamageable damageable = hit.collider.GetComponentInParent<IDamageable>();
             if (damageable != null)
             {
-                damageable.Damage(hit, Damage);
+                damageable.Damage(Damage, hit);
             }
         }
-        ShootEffect();
     }
 
     void ShootEffect()
     {
-        gunAnimator?.Play("Shoot");
+        if (gunAnimator != null) gunAnimator.Play("Shoot");
         gunAudio?.PlayOneShot(gunShotSound);
         muzzleFlash?.Play();
     }

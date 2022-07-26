@@ -6,7 +6,7 @@ public class Target : MonoBehaviour, IDamageable
 {
     [SerializeField] GameObject impactEffect;
 
-    public void Damage (RaycastHit hit, float damage)
+    public void Damage(float damage, RaycastHit hit = new RaycastHit())
     {
         GameObject impactParticle = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
         Destroy(impactParticle, 1f);
