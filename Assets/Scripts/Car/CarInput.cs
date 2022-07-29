@@ -2,19 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.XRContent.Interaction;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class CarInput : MonoBehaviour
 {
-    //[SerializeField] XRSteeringWheel wheel;
-    //[SerializeField] XRThrottle throttle;
-    //[SerializeField] CarControllerPrometeo carController;
+    [SerializeField] ICar carController;
 
-    // Update is called once per frame
-    void Update()
-    {
-        //if (throttle.Value) carController.InputForward();
-        //if (!throttle.Value) carController.InputReverse();
-        //if (wheel.InputValue > 0f) carController.TurnRight();
-        //if (wheel.InputValue < 0f) carController.TurnLeft();
-    }
+    [Tooltip("Object to read Steering input rotation value from")]
+    [SerializeField] GameObject steeringWheel;
+    [Tooltip("Object to Forward/Reverse input value from")]
+    [SerializeField] GameObject gearBox;
+    [Tooltip("Object to read Brake input value from")]
+    [SerializeField] GameObject handBrake;
 }

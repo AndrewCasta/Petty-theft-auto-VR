@@ -8,9 +8,9 @@ public class NPC : MonoBehaviour, IDamageable, IKillable
     public int Health { get; set; }
     public bool IsAlive { get; set; }
 
-    public Rigidbody[] ragdollRB;
-    public Animator animator;
-    public CharacterController characterController;
+    Rigidbody[] ragdollRB;
+    Animator animator;
+    CharacterController characterController;
 
     [SerializeField] float impactForce;
     [SerializeField] GameObject impactEffect;

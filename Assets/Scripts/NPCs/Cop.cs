@@ -7,7 +7,7 @@ public class Cop : NPC
 {
     [SerializeField] float turnSpeed;
 
-    [SerializeField] Transform playerTransform;
+    Transform playerTransform;
 
     [SerializeField] GunController gun;
     [SerializeField] float shootTime;
