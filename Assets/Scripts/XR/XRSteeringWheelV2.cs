@@ -5,64 +5,63 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 namespace Unity.XRContent.Interaction
 {
-
-    public class XRSteeringWheelV2 : XRGrabInteractable
+    /// <summary>
+    /// Two hand grabbable wheel that is rotated in place
+    /// Uses a hingle joint to precent movement when grabbing
+    /// </summary>
+    public class XRSteeringWheelV2 : XROffsetGrabInteractable
     {
-        public float Value { get; set; }
+        HingeJoint hinge;
 
-        HingeJoint hingeJoint;
+        [SerializeField] bool rotateBackToZero;
+        [SerializeField] float rotationSpeed;
+        Quaternion inititalRotation;
 
         Transform originalParent;
-        XRBaseController controller;
-
-        [SerializeField] CarControllerPrometeo carController;
 
 
         protected override void Awake()
         {
             base.Awake();
             originalParent = transform.parent;
-            hingeJoint = GetComponent<HingeJoint>();
+            hinge = GetComponent<HingeJoint>();
             selectMode = InteractableSelectMode.Multiple;
+            inititalRotation = transform.localRotation;
         }
 
         protected override void OnSelectEntered(SelectEnterEventArgs args)
         {
-            if (isSelected) hingeJoint.useMotor = false;
-            if (firstInteractorSelecting is XRDirectInteractor)
-            {
-                attachTransform.position = firstInteractorSelecting.transform.position;
-                attachTransform.rotation = firstInteractorSelecting.transform.rotation;
-
-            }
+            if (isSelected) hinge.useMotor = false;
             base.OnSelectEntered(args);
-
-
             transform.SetParent(originalParent); // Lock object to parent (for movement in car later)
         }
 
         protected override void OnSelectExited(SelectExitEventArgs args)
         {
             base.OnSelectExited(args);
-            Value = 0;
-            if (!isSelected) hingeJoint.useMotor = true;
+            if (!isSelected) hinge.useMotor = true;
         }
 
         public override void ProcessInteractable(XRInteractionUpdateOrder.UpdatePhase updatePhase)
         {
+            base.ProcessInteractable(updatePhase);
+            if (interactorsSelecting.Count == 1)
+                firstInteractorSelecting.transform.LookAt(transform.position);
             if (interactorsSelecting.Count == 2)
                 ProcessTwoHandInteraction();
-            base.ProcessInteractable(updatePhase);
+            if (interactorsSelecting.Count == 0 && rotateBackToZero)
+                RotateWheelToZero();
         }
 
         private void ProcessTwoHandInteraction()
         {
-            Vector3 directionBetweenHands = interactorsSelecting[1].transform.position - firstInteractorSelecting.transform.position;
-            // This creates a horizontal line between the hands
-            // Next I want to find a rotation from this & apply it to the wheel
-            // Maybe rotate the firstinteractor, like the Gun?
+            Vector3 direction = interactorsSelecting[1].transform.position - firstInteractorSelecting.transform.position;
+            firstInteractorSelecting.transform.rotation = Quaternion.LookRotation(direction);
+        }
 
-            // When releasing, if first is released first, need to make the second now the first and swap the attachpoint?
+        void RotateWheelToZero()
+        {
+            transform.localRotation = Quaternion.RotateTowards(transform.localRotation, inititalRotation, rotationSpeed);
         }
 
     }

@@ -19,7 +19,6 @@ namespace Unity.XRContent.Interaction
         {
             base.Awake();
             originalParent = transform.parent;
-
         }
 
         protected override void OnSelectEntered(SelectEnterEventArgs args)
