@@ -199,8 +199,8 @@ Transform:
   m_GameObject: {fileID: 1737357906362700775}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.875, y: 1.3462, z: -0.0074840933}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.85, y: 0.85, z: 0.85}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4212320813369822089}
   - {fileID: 3371716752575788068}
@@ -354,10 +354,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b74562a7401ac9f43b28eb087843869b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
-  fireMode: 0
-  rateOfFire: 0
-  gunShotSound: {fileID: 8300000, guid: dce42920d720e7b40a6b00a4f0f60af4, type: 3}
+  damage: 1
+  fireMode: 1
+  rateOfFire: 10
+  gunShotSound: {fileID: 8300000, guid: d2fa5710fee9a8d4cae6a81605ad7d94, type: 3}
   muzzleFlash: {fileID: 1722792064038932652}
 --- !u!114 &1737357906362700776
 MonoBehaviour:

@@ -202,7 +202,7 @@ MonoBehaviour:
   damage: 0
   fireMode: 0
   rateOfFire: 0
-  gunShotSound: {fileID: 8300000, guid: dce42920d720e7b40a6b00a4f0f60af4, type: 3}
+  gunShotSound: {fileID: 8300000, guid: c2bfe3bf6265c544bb3bf24e3986fb6b, type: 3}
   muzzleFlash: {fileID: 2431024867201667727}
 --- !u!114 &8319349043968510765
 MonoBehaviour:
