@@ -1725,9 +1725,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd4cdda4532494442b121b273ac1bad8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wheel: {fileID: 0}
-  throttle: {fileID: 0}
-  carController: {fileID: 6551936117139442235}
+  steeringWheel: {fileID: 0}
+  gearBox: {fileID: 0}
+  handBrake: {fileID: 0}
 --- !u!1001 &1095196441
 PrefabInstance:
   m_ObjectHideFlags: 0
