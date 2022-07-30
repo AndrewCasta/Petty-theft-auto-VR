@@ -474,8 +474,8 @@ MonoBehaviour:
   m_ForceGravityOnDetach: 0
   m_RetainTransformParent: 1
   m_AttachPointCompatibilityMode: 0
-  rotatingInteractor: 0
-  isTwoHanded: 0
+  rotatingInteractor: 1
+  isTwoHanded: 1
 --- !u!1 &1968660037178920037
 GameObject:
   m_ObjectHideFlags: 0
